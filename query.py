@@ -7,6 +7,7 @@ def displayMenu():
     print("Menu")
     print("* enter q for exit")
     print("* enter list for listing all the movie names")
+    print("* enter search for searching movies")
     print()
 
 def main():
@@ -20,6 +21,12 @@ def main():
             for movie in movies._movies:
                 print(str(i) + " " + movie["name"])
                 i += 1
+        elif(inVar.lower() == "search"):
+            searchingFor = input("Please enter the search term: ")
+            for movie in movies._movies:
+                if (searchingFor.lower() in movie["name"].lower() ):
+                    print(movie["name"])
+
 
 
 if __name__ == "__main__":

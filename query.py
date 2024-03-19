@@ -24,9 +24,13 @@ def main():
                 i += 1
         elif(inVar.lower() == "search"):
             searchingFor = input("Please enter the search term: ")
+            found = False
             for movie in movies._movies:
                 if (searchingFor.lower() in movie["name"].lower() ):
                     print(movie["name"])
+                    found = True
+            if (not found):
+                print("No Results.")
         elif(inVar.lower() == "cast"):
             searchingFor = input("Please enter the search term: ")
             hasResults = False
